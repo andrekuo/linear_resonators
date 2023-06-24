@@ -1,21 +1,17 @@
 
-from qiskit_metal.qlibrary.couplers.coupled_line_tee import CoupledLineTee
-
 from qiskit_metal.qlibrary.terminations.launchpad_wb import LaunchpadWirebond
 
-from qiskit_metal.qlibrary.tlines.straight_path import RouteStraight
+from qiskit_metal.qlibrary.terminations.open_to_ground import OpenToGround
 
-from qiskit_metal.qlibrary.terminations.short_to_ground import ShortToGround
+from qiskit_metal.qlibrary.couplers.coupled_line_tee import CoupledLineTee
+
+from qiskit_metal.qlibrary.tlines.straight_path import RouteStraight
 
 from qiskit_metal.qlibrary.tlines.meandered import RouteMeander
 
 from qiskit_metal import designs, MetalGUI
 
-from qiskit_metal.designs.design_multiplanar import MultiPlanar
-
-
-
-design = MultiPlanar()
+design = designs.DesignPlanar()
 
 gui = MetalGUI(design)
 
@@ -48,9 +44,9 @@ component_template=None,
 
 
 
-stg1 = ShortToGround(
+otg1 = OpenToGround(
 design,
-name='stg1',
+name='otg1',
 options={'orientation': '90',
  'pos_x': '-1250um',
  'pos_y': '1200um'},
@@ -92,11 +88,11 @@ options={'_actual_length': '3.8150000000000004 '
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg1',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg1',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt1',
                               'pin': 'second_end'}},
- 'total_length': '4692um',
+ 'total_length': '3815um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
@@ -106,9 +102,9 @@ type='CPW',
 
 
 
-stg2 = ShortToGround(
+otg2 = OpenToGround(
 design,
-name='stg2',
+name='otg2',
 options={'orientation': '-90',
  'pos_x': '1250um',
  'pos_y': '1700um'},
@@ -150,11 +146,11 @@ options={'_actual_length': '3.714999999999999 '
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg2',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg2',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt2',
                               'pin': 'second_end'}},
- 'total_length': '4565um',
+ 'total_length': '3715um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
@@ -164,9 +160,9 @@ type='CPW',
 
 
 
-stg3 = ShortToGround(
+otg3 = OpenToGround(
 design,
-name='stg3',
+name='otg3',
 options={'orientation': '90',
  'pos_x': '-1250um',
  'pos_y': '-300um'},
@@ -207,11 +203,11 @@ options={'_actual_length': '3.62 mm',
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg3',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg3',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt3',
                               'pin': 'second_end'}},
- 'total_length': '4433um',
+ 'total_length': '3620um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
@@ -221,9 +217,9 @@ type='CPW',
 
 
 
-stg4 = ShortToGround(
+otg4 = OpenToGround(
 design,
-name='stg4',
+name='otg4',
 options={'orientation': '-90',
  'pos_x': '1250um',
  'pos_y': '250um'},
@@ -264,11 +260,11 @@ options={'_actual_length': '3.535 mm',
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg4',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg4',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt4',
                               'pin': 'second_end'}},
- 'total_length': '4308um',
+ 'total_length': '3535um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
@@ -278,9 +274,9 @@ type='CPW',
 
 
 
-stg5 = ShortToGround(
+otg5 = OpenToGround(
 design,
-name='stg5',
+name='otg5',
 options={'orientation': '90',
  'pos_x': '-1250um',
  'pos_y': '-1500um'},
@@ -322,11 +318,11 @@ options={'_actual_length': '3.4499999999999993 '
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg5',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg5',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt5',
                               'pin': 'second_end'}},
- 'total_length': '4190um',
+ 'total_length': '3450um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
@@ -336,9 +332,9 @@ type='CPW',
 
 
 
-stg6 = ShortToGround(
+otg6 = OpenToGround(
 design,
-name='stg6',
+name='otg6',
 options={'orientation': '-90',
  'pos_x': '1250um',
  'pos_y': '-1000um'},
@@ -380,11 +376,11 @@ options={'_actual_length': '3.375000000000001 '
           'start_straight': '50um'},
  'meander': {'asymmetry': '0um',
              'spacing': '100um'},
- 'pin_inputs': {'end_pin': {'component': 'stg6',
-                            'pin': 'short'},
+ 'pin_inputs': {'end_pin': {'component': 'otg6',
+                            'pin': 'open'},
                 'start_pin': {'component': 'clt6',
                               'pin': 'second_end'}},
- 'total_length': '4078um',
+ 'total_length': '3375um',
  'trace_gap': '5.1um',
  'trace_width': '11.7um'},
 
